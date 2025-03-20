@@ -1,0 +1,114 @@
+{
+  "version": 4,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 23,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "msvc",
+      "hidden": true,
+      "inherits": "windows",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "cl"
+      }
+    },
+    {
+      "name": "windows",
+      "hidden": true,
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/out/install/${presetName}",
+      "toolchainFile": "${sourceDir}/modules/vcpkg/scripts/buildsystems/vcpkg.cmake",
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": {
+          "hostOS": [ "Windows" ]
+        }
+      }
+    },
+    {
+      "name": "windows-msvc-x64-debug",
+      "inherits": [
+        "windows",
+        "msvc"
+      ],
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "VCPKG_TARGET_TIPLET": "x64-windows"
+      }
+    },
+    {
+      "name": "windows-msvc-x64-debug-static",
+      "inherits": [
+        "windows",
+        "msvc"
+      ],
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "VCPKG_TARGET_TIPLET": "x64-windows-static-md"
+      }
+    },
+    {
+      "name": "windows-msvc-x64-release",
+      "inherits": [
+        "windows",
+        "msvc"
+      ],
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "VCPKG_TARGET_TIPLET": "x64-windows-release"
+      }
+    },
+    {
+      "name": "windows-msvc-x64-release-static",
+      "inherits": [
+        "windows",
+        "msvc"
+      ],
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "VCPKG_TARGET_TIPLET": "x64-windows-static-md-release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "windows-msvc-x64-debug",
+      "configurePreset": "windows-msvc-x64-debug"
+    },
+    {
+      "name": "windows-msvc-x64-debug-static",
+      "configurePreset": "windows-msvc-x64-debug-static"
+    },
+    {
+      "name": "windows-msvc-x64-release",
+      "configurePreset": "windows-msvc-x64-release"
+    },
+    {
+      "name": "windows-msvc-x64-release-static",
+      "configurePreset": "windows-msvc-x64-release-static"
+    }
+  ]
+}

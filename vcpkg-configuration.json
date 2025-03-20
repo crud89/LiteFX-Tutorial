@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg-configuration.schema.json",
+  "default-registry": {
+    "kind": "git",
+    "repository": "https://github.com/Microsoft/vcpkg",
+    "baseline": "f883576b85d03affa3f36925dba09cf06a104a03"
+  },
+  "registries": [
+    {
+      "kind": "git",
+      "repository": "https://github.com/crud89/LiteFX-Registry",
+      "reference": "main",
+      "baseline": "09cc75837cf3c84338cc243e06d6b167d322a270",
+      "packages": [
+        "litefx",
+        "directx12-agility",
+        "directx-warp",
+        "spdlog"
+      ]
+    }
+  ]
+}
