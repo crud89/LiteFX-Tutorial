@@ -10,8 +10,8 @@
       "name": "msvc",
       "hidden": true,
       "inherits": "windows",
-      "cacheVariables": {
-        "CMAKE_CXX_COMPILER": "cl"
+      "environment": {
+        "CXX": "cl"
       }
     },
     {
