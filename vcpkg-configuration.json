@@ -10,7 +10,7 @@
       "kind": "git",
       "repository": "https://github.com/crud89/LiteFX-Registry",
       "reference": "main",
-      "baseline": "09cc75837cf3c84338cc243e06d6b167d322a270",
+      "baseline": "e00b216835818a596ef0216130696b1d38d97023",
       "packages": [
         "litefx",
         "directx12-agility",
